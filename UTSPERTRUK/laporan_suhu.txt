@@ -1,0 +1,11 @@
+Rata-rata: 31.14
+Tertinggi: 35 (Kamis)
+Terendah: 28 (Minggu)
+Senin: 31 - Normal
+Selasa: 33 - Panas
+Rabu: 29 - Normal
+Kamis: 35 - Panas
+Jumat: 32 - Panas
+Sabtu: 30 - Normal
+Minggu: 28 - Normal
+Jumlah hari Panas: 3
