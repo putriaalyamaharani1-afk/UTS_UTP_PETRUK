@@ -1,0 +1,5 @@
+Jumlah film: 8
+Rata-rata rating: 8.12
+- laut bercerita (2026) - drama - rating 9
+- seporsi mie ayam (2025) - drama - rating 8
+- laskar pelangi (2008) - drama - rating 8

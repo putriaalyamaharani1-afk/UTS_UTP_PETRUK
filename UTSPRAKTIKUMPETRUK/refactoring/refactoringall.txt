@@ -1,0 +1,44 @@
+#refactory pertama menghapus duplikat kode di validasi.py
+#cek_tahun yang tadinya 2 kali sekarang jadi 1
+
+
+def cek_tahun(tahun):
+    # tahun jadi angka tahun nol atau negatif eror tidak valid
+    try:
+        tahun = int(tahun)
+    except ValueError:
+        raise DataFilmError("Tahun harus berupa angka")
+    if tahun <= 0:
+        raise DataFilmError("Tahun harus lebih dari 0")
+    return tahun 
+
+# Refactoring 2 - Remove Duplicate Code + Rename (proses.py)
+# class film (huruf kecil) dihapus, hanya class Film yang dipertahankan
+
+class Film:
+    def __init__(self, **kwargs):
+        # **kwargs: terima data film dalam bentuk key=value
+        self.judul = kwargs["judul"]
+        self.genre = kwargs["genre"]
+        self.tahun = kwargs["tahun"]
+        self.rating = kwargs["rating"]
+
+    def info(self):
+        return f"{self.judul} ({self.tahun}) - {self.genre} - rating {self.rating}"
+
+# Refactoring 3 - Extract Function (main.py)
+
+def muat_katalog():
+    # baca file lalu ubah menjadi objek KatalogFilm
+    return KatalogFilm(baca_film(NAMA_FILE))
+
+
+# Refactoring 4 - Extract Function (validasi.py)
+ 
+def ubah_ke_angka(nilai, nama_field):
+    # ubah teks menjadi angka, ganti ValueError dengan error buatan sendiri
+    try:
+        return int(nilai)
+    except ValueError:
+        raise DataFilmError(f"{nama_field} harus berupa angka")
+ 
